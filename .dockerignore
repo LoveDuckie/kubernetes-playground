@@ -1,12 +1,9 @@
-# --- PYTHON
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
 # C extensions
-*.so
 
 # Distribution / packaging
 .Python
@@ -129,96 +126,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# ANGULAR
-
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
-
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-.angular/cache
-.sass-cache/
-projects/frontend/connect.lock
-projects/frontend/coverage
-projects/frontend/libpeerconnection.log
-testem.log
-projects/frontend/typings
-
-# System files
-.DS_Store
-Thumbs.db
-
-# --- DOCKER
-
-!containers/
-
-# --- BOOTSTRAP
-
-# Ignore docs files
-/_site/
-# Hugo resources folder
-/resources/
-
-# Numerous always-ignore extensions
-*.diff
-*.err
-*.log
-*.orig
-*.rej
-*.swo
-*.swp
-*.vi
-*.zip
-*~
-
-# OS or Editor folders
-._*
-.cache
-.DS_Store
-.idea
-.project
-.settings
-.tmproj
-*.esproj
-*.sublime-project
-*.sublime-workspace
-nbproject
-Thumbs.db
-/.vscode/
-# Local Netlify folder
-.netlify
-
-# Komodo
-.komodotools
-*.komodoproject
-
-# Folders to ignore
-/js/coverage/
-/node_modules/

@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "The backend service for my test application"
+authors = ["Luc Shelton <lucshelton@gmail.com>"]
+maintainers = [
+    "Luc Shelton <lucshelton@gmail.com>"
+]
+packages = [
+    { include = "backend" },
+    { include = "backend/**/*.py" },
+    { include = "tests" },
+    { include = "tests/**/*.py" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.7,<=3.10"
+celery = "^5.2.7"
+fastapi = "^0.78.0"
+pydantic = "^1.9.1"
+SQLAlchemy = "^1.4.36"
+pandas = "^1.4.2"
+numpy = "^1.22.4"
+tensorflow = "^2.9.1"
+
+[tool.poetry.dev-dependencies]
+click = "^8.1.3"
+rich-click = "^1.4"
+flower = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

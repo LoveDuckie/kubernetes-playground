@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  frontend:
+    image: ${SERVICE_PREFIX}frontend:latest
+    container_name: ${SERVICE_PREFIX}frontend
+    ports:
+      - 80:80
+      - 443:443
+    build:
+      context: ./
+      dockerfile: ${CONTAINERS_ROOT}/frontend/build/Dockerfile
+      target: test-app-frontend-nginx-build
+      args:
+        CUSTOM_BUILD_VERSION: 
+        CUSTOM_BUILD_DATE:
+        CUSTOM_BUILD_UID:
+        NGINX_VERSION: '1.20.1'
+
+  backend:
+    image: ${SERVICE_PREFIX}backend:latest
+    container_name: ${SERVICE_PREFIX}backend
+    build:
+      dockerfile: ${CONTAINERS_ROOT}/backend/build/Dockerfile
+      context: ./
+    ports:
+      - 8080:8080
+
+  backend-worker:
+    image: ${SERVICE_PREFIX}backend-worker:latest
+    container_name: ${SERVICE_PREFIX}backend-worker
+    build:
+      dockerfile: ${CONTAINERS_ROOT}/backend/build/Dockerfile
+      context: ./
+    ports:
+      - 8080:8080
+
+  redis:
+    image: redis:7.0.0-alpine
+    container_name: '${SERVICE_PREFIX}-redis'
+  
+  rabbitmq:
+    image: rabbitmq:3.9.18-management-alpine
+    container_name: '${SERVICE_PREFIX}-rabbitmq'

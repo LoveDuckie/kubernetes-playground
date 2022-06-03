@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: test-app-frontend
+spec:
+  selector:
+    matchLabels:
+      app: test-app-frontend
+  template:
+    metadata:
+      labels:
+        app: test-app-frontend
+    spec:
+      containers:
+      - name: test-app-frontend
+        image: test-app-frontend:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
