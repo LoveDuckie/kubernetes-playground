@@ -1,0 +1,1 @@
+export const BackendApiUrl: string = 'http://localhost:8080';
