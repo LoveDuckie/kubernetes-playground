@@ -5,21 +5,21 @@ import { Directive, EventEmitter, HostBinding, HostListener, Output } from '@ang
 })
 export class DragAndDropDirective {
   @Output() onFileDropped = new EventEmitter<any>();
-  
+
   constructor() { }
-  @HostListener('dragover', ['$event']) 
+  @HostListener('dragover', ['$event'])
   public onDragOver(event: any): any {
     event.preventDefault();
     event.stopPropagation();
   }
 
-  @HostListener('dragleave', ['$event']) 
+  @HostListener('dragleave', ['$event'])
   public onDragLeave(event: any): any {
     event.preventDefault();
     event.stopPropagation();
   }
 
-  @HostListener('drop', ['$event']) 
+  @HostListener('drop', ['$event'])
   public onDrop(event: any): any {
     event.preventDefault();
     event.stopPropagation();
